@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.dkp.shopping.MainActivity">
+    >
 
     <TextView
+        android:id="@+id/tv_01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
@@ -14,5 +15,12 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/anniu"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="shopping"
+        app:layout_constraintTop_toBottomOf="@+id/tv_01"
+        />
 
 </android.support.constraint.ConstraintLayout>
