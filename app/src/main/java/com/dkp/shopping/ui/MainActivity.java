@@ -22,13 +22,13 @@ public class MainActivity extends AppCompatActivity {
         Log.d("dkp====","onCreate");
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        findViewById(R.id.anniu).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent mIntent =new Intent(MainActivity.this,DemoActivity.class);
-                startActivity(mIntent);
-            }
-        });
+//        findViewById(R.id.anniu).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent mIntent =new Intent(MainActivity.this,DemoActivity.class);
+//                startActivity(mIntent);
+//            }
+//        });
     }
 
 
