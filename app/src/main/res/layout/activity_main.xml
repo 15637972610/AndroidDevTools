@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.dkp.shopping.utils.SlidingMenu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:dkp="http://schemas.android.com/apk/res/com.dkp.shopping"
     android:id="@+id/menu"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:scrollbars="none"
-    dkp:rightPadding="10dp"
+    android:background="@mipmap/img_frame_background"
     >
 
     <LinearLayout
@@ -19,7 +18,6 @@
             android:id="@+id/id_drawer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#E0EEE0"
             android:orientation="vertical">
         </LinearLayout>
 

@@ -2,6 +2,7 @@ package com.dkp.shopping.utils;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.MotionEvent;
@@ -10,6 +11,7 @@ import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 
 import com.dkp.shopping.R;
+import com.nineoldandroids.view.ViewHelper;
 
 
 /**
@@ -30,7 +32,7 @@ public class SlidingMenu extends HorizontalScrollView {
     /**
      * dp 菜单距右侧屏幕尺寸
      */
-    private int mMenuRightPadding = 50;
+    private int mMenuRightPadding = 20;
 
     private boolean once = false;
     /**
@@ -45,6 +47,15 @@ public class SlidingMenu extends HorizontalScrollView {
      * 菜单的一半宽度
      */
     private int mHalfMenuWidth;
+    /**
+     * 菜单布局
+     */
+    ViewGroup menu;
+
+    /**
+     * 内容布局
+     */
+    ViewGroup content;
 
     public SlidingMenu(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -83,9 +94,9 @@ public class SlidingMenu extends HorizontalScrollView {
         if (!once){
             LinearLayout wrapper = (LinearLayout) getChildAt(0);
             //获取菜单根布局
-            ViewGroup menu = (ViewGroup) wrapper.getChildAt(0);
+            menu = (ViewGroup) wrapper.getChildAt(0);
             //获取内容根布局
-            ViewGroup content = (ViewGroup) wrapper.getChildAt(1);
+            content = (ViewGroup) wrapper.getChildAt(1);
             //菜单居右侧的距离转换成dp
             mMenuRightPadding = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,mMenuRightPadding,content.getResources().getDisplayMetrics());
             //菜单宽度
@@ -153,6 +164,32 @@ public class SlidingMenu extends HorizontalScrollView {
         }
 
         return super.onTouchEvent(ev);
+    }
+
+    @Override
+    protected void onScrollChanged(int l, int t, int oldl, int oldt) {
+        super.onScrollChanged(l, t, oldl, oldt);
+        //内容区域的缩放比例
+        float scale = l*1.0f / mMenuWidth;//计算菜单1.0-0.0变化率，假设是1.0-0.8
+        float rightScale = 0.8f+scale*0.2f;
+        //菜单区域的缩放比例，假设是从0.7-1
+        float leftScale = 1-0.3f*scale;
+        //菜单透明度，假设是0.6-1.0
+        float translate = 0.6f + 0.4f * (1 - scale);
+        //X方向的偏移量
+        float tranlateX = mMenuWidth * scale * 0.6f;
+
+
+        ViewHelper.setScaleX(menu, leftScale);
+        ViewHelper.setScaleY(menu, leftScale);
+        ViewHelper.setAlpha(menu, translate);
+        ViewHelper.setTranslationX(menu, tranlateX);
+
+        ViewHelper.setPivotX(content, 0);
+        ViewHelper.setPivotY(content, content.getHeight() / 2);
+        ViewHelper.setScaleX(content, rightScale);
+        ViewHelper.setScaleY(content, rightScale);
+
     }
 
     /**
