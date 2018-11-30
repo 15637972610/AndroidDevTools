@@ -1,6 +1,7 @@
 package com.dkp.shopping.utils;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.MotionEvent;
@@ -8,8 +9,11 @@ import android.view.ViewGroup;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 
+import com.dkp.shopping.R;
+
+
 /**
- * Created by 贷款批 on 2018/11/30.
+ * Created by dkp on 2018/11/30.
  */
 
 public class SlidingMenu extends HorizontalScrollView {
@@ -49,6 +53,25 @@ public class SlidingMenu extends HorizontalScrollView {
 
     public SlidingMenu(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+//        mScreenWidth = ScreenUtils.getScreenWidth(context);
+//        TypedArray a =context.getTheme().obtainStyledAttributes(attrs, R.styleable.SlidingMenu,defStyleAttr,0);
+//        int n = a.getIndexCount();
+//        for (int i = 0; i < n; i++)
+//        {
+//            int attr = a.getIndex(i);
+//            switch (attr)
+//            {
+//                case R.styleable.SlidingMenu_rightPadding:
+//                    // 默认50
+//                    mMenuRightPadding = a.getDimensionPixelSize(attr,
+//                            (int) TypedValue.applyDimension(
+//                                    TypedValue.COMPLEX_UNIT_DIP, 10f,
+//                                    getResources().getDisplayMetrics()));// 默认为10DP
+//                    break;
+//            }
+//        }
+//        a.recycle();
+
     }
 
     public SlidingMenu(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
@@ -168,7 +191,6 @@ public class SlidingMenu extends HorizontalScrollView {
             openMenu();
         }
     }
-
 
 
 }
