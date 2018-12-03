@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Shopping</string>
+    <string name="sliding_menu">SlidingMenu侧滑菜单</string>
 </resources>
