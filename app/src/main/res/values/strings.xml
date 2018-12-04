@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">Shopping</string>
     <string name="sliding_menu">SlidingMenu侧滑菜单</string>
+    <string name="viewpager_table">带标题的页面切换</string>
+
+    <string name="tab_first_name">Class</string>
+    <string name="tab_second_name">Message</string>
+    <string name="tab_third_name">News</string>
+    <string name="tab_fourth_name">Me</string>
+    <string name="tab_notice_name">News</string>
+    <string name="tab_first_fragment">第一个页面</string>
+    <string name="tab_second_fragment">第二个页面</string>
+    <string name="tab_third_fragment">第三个页面</string>
 </resources>

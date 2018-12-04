@@ -3,4 +3,12 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="main_title_divider_line_color">#FFD9D9D9</color>
+
+    <!-- 标题栏文字按下颜色 -->
+    <color name="tv_title_color_pressed">#41AEE2</color>
+    <color name="tv_title_color">#ff7b7b7b</color>
+    <color name="colorBlack">#ff000000</color>
+    <color name="colorGray">#B8B8B8</color>
+    <color name="colorWhite">#ffffffff</color>
 </resources>

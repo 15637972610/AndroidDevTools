@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
-    android:padding="20dp"
-    >
+    android:background="#F5F5F5"
+    android:padding="20dp">
 
     <Button
         android:id="@+id/sliding_btn"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="@string/sliding_menu"
         android:layout_marginTop="20dp"
-        />
+        android:background="#87CEFF"
+        android:text="@string/sliding_menu" />
 
-
+    <Button
+        android:id="@+id/viewpager_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="#87CEFF"
+        android:text="@string/viewpager_table"
+        app:layout_constraintTop_toBottomOf="@+id/sliding_btn" />
 
 
 </android.support.constraint.ConstraintLayout>

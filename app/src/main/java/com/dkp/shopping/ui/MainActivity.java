@@ -15,8 +15,18 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
+    /**
+     *  切换去侧滑菜单的按钮
+     */
     @BindView(R.id.sliding_btn)
     Button mSlingBtn;
+
+    /**
+     * 切换去table页的按钮
+     */
+    @BindView(R.id.viewpager_btn)
+    Button viewpagerBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,12 +36,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick(R.id.sliding_btn)
+    @OnClick({R.id.sliding_btn,R.id.viewpager_btn})
     public void onViewClicked(View view){
         switch (view.getId()){
             case R.id.sliding_btn:
                 Intent sliding_menu = new Intent(MainActivity.this,SlidingMenuActivity.class);
                 startActivity(sliding_menu);
+                break;
+            case R.id.viewpager_btn:
+                Intent viewpagertable = new Intent(MainActivity.this,ViewPageTableActivity.class);
+                startActivity(viewpagertable);
                 break;
             default:
                     break;

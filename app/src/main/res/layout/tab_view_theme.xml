@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/horizontalScrollView"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite"
+    >
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_listview_divider_height"
+        android:background="@color/main_title_divider_line_color" />
+
+    <FrameLayout
+        android:id="@+id/normal_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/colorWhite">
+
+        <LinearLayout
+            android:id="@+id/ll_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/rl_tab_first"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="7dp"
+                android:paddingTop="7dp">
+
+                <ImageView
+                    android:id="@+id/iv_menu_msg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:contentDescription="@null"
+                    android:src="@drawable/tab_first_selector" />
+
+                <TextView
+                    android:id="@+id/tv_msg_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_menu_msg"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/main_ico_drawable_padding"
+                    android:text="@string/tab_first_name"
+                    android:textColor="@color/main_bottom_title_txt_selector"
+                    android:textSize="@dimen/text_size_11" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_tab_third"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="7dp"
+                android:paddingTop="7dp">
+
+                <ImageView
+                    android:id="@+id/iv_menu_contact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:contentDescription="@null"
+                    android:src="@drawable/tab_third_selector" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_menu_contact"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/main_ico_drawable_padding"
+                    android:text="@string/tab_third_name"
+                    android:textColor="@color/main_bottom_title_txt_selector"
+                    android:textSize="@dimen/text_size_11" />
+
+                <View
+                    android:id="@+id/icon_newMessage"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="2dp"
+                    android:layout_toRightOf="@id/iv_menu_contact"
+                    android:background="@drawable/icon_point_red"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/rl_tab_notice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="7dp"
+                android:paddingTop="7dp">
+
+                <ImageView
+                    android:id="@+id/iv_menu_notice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:contentDescription="@null"
+                    android:src="@drawable/tab_notice_selector" />
+
+                <TextView
+                    android:id="@+id/tv_me_notice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_menu_notice"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/main_ico_drawable_padding"
+                    android:text="@string/tab_notice_name"
+                    android:textColor="@color/main_bottom_title_txt_selector"
+                    android:textSize="@dimen/text_size_11" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_tab_fourth"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="7dp"
+                android:paddingTop="7dp"
+                android:visibility="gone"
+                >
+
+                <ImageView
+                    android:id="@+id/iv_menu_me"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:contentDescription="@null"
+                    android:src="@drawable/tab_fourth_selector" />
+
+                <TextView
+                    android:id="@+id/tv_me_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_menu_me"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/main_ico_drawable_padding"
+                    android:text="@string/tab_fourth_name"
+                    android:textColor="@color/main_bottom_title_txt_selector"
+                    android:textSize="@dimen/text_size_11" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

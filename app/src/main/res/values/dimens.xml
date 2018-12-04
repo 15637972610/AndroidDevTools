@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="common_padding_left">16dp</dimen>
+    <dimen name="common_padding_right">16dp</dimen>
+    <!-- 通用分割线高度 -->
+    <dimen name="common_listview_divider_height">0.33dp</dimen>
+    <!-- actionbar -->
+    <dimen name="main_ico_drawable_padding">-1dp</dimen>
+
+    <dimen name="titile_padding_size">32dp</dimen>
+    <!-- title heigh  -->
+    <dimen name="titile_heigh">73dp</dimen>
+    <dimen name="text_size_11">11dp</dimen>
+    <dimen name="text_size_18">18dp</dimen>
+
+</resources>

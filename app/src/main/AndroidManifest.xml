@@ -19,6 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.SlidingMenuActivity"/>
+        <activity android:name="com.dkp.shopping.ui.ViewPageTableActivity"/>
+
 
     </application>
 
