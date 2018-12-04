@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
+    android:layout_height="73dp"
     android:background="@color/tv_title_color_pressed"
     android:clickable="true"
     android:focusable="true"
@@ -25,6 +25,7 @@
         android:layout_gravity="center_horizontal"
         android:ellipsize="end"
         android:gravity="center_vertical"
+        android:layout_marginTop="16dp"
         android:maxLines="1"
         android:text=""
         android:textColor="@color/colorWhite"

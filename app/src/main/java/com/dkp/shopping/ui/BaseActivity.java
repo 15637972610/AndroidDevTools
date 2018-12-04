@@ -2,6 +2,7 @@ package com.dkp.shopping.ui;
 
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -22,7 +23,7 @@ public abstract class BaseActivity extends FragmentActivity {
         // 禁止横竖屏切换
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         // 设置全屏及状态栏颜色 去掉沉浸式状态栏201800829
-        //fullScreen(this, getStatusBarColor());
+        fullScreen(this, getStatusBarColor());
 
         setContentView(getContentViewId());
         getWindow().setSoftInputMode(32);
@@ -50,7 +51,7 @@ public abstract class BaseActivity extends FragmentActivity {
                 window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
                 window.setStatusBarColor(color);//Color.TRANSPARENT
                 //导航栏颜色也可以正常设置
-//                window.setNavigationBarColor(Color.TRANSPARENT);
+                window.setNavigationBarColor(Color.TRANSPARENT);
             } else {
                 Window window = activity.getWindow();
                 WindowManager.LayoutParams attributes = window.getAttributes();
@@ -62,7 +63,7 @@ public abstract class BaseActivity extends FragmentActivity {
             }
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {//android6.0以后可以对状态栏文字颜色和图标进行修改
-            activity.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+//            activity.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         }
     }
 
