@@ -6,6 +6,8 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.dkp.shopping.dao.DaoMaster;
 import com.dkp.shopping.dao.DaoSession;
+import com.dkp.shopping.utils.APPOnCrash;
+import com.dkp.shopping.utils.CrashHandler;
 
 /**
  * Created by dkp on 2018/10/25.
@@ -13,11 +15,17 @@ import com.dkp.shopping.dao.DaoSession;
 
 public class MyApplication extends Application {
     private static Context context;
+    private static long SLEEP_TIME = 3000;
     @Override
     public void onCreate() {
         super.onCreate();
         context = getApplicationContext();
+        CrashHandler.getInstance().init(SLEEP_TIME, new APPOnCrash(context)); //崩溃日志手动捕捉
         initGreenDao();
+    }
+
+    public static Context getContext() {
+        return context;
     }
 
     /**

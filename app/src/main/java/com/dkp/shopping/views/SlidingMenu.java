@@ -1,8 +1,6 @@
-package com.dkp.shopping.utils;
+package com.dkp.shopping.views;
 
 import android.content.Context;
-import android.content.res.TypedArray;
-import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.MotionEvent;
@@ -10,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 
-import com.dkp.shopping.R;
+import com.dkp.shopping.utils.ScreenUtils;
 import com.nineoldandroids.view.ViewHelper;
 
 

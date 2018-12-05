@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.dkp.shopping.R;
-import com.dkp.shopping.utils.SlidingMenu;
+import com.dkp.shopping.views.SlidingMenu;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
