@@ -7,8 +7,8 @@ contains these moudles at now!<br>
 4.viewpager+fragment+自定义title实现table页的切换<br>
 5.集成沉浸式状态栏功能<br>
 6.崩溃日志手动捕获<br>
-7.创建特殊日志文件：例如登录模块的日志单独收集，便于以后日志记录模块化，避免大文件日志耗费多余流量<br>
+7.创建指定日志文件。例如登录模块的日志单独收集，便于日志记录模块化。避免大文件传输耗费多余流量<br>
 TODO:<br>
 a.日志分块上传，例如登录日志，崩溃日志等类型日志根据不同场景上传<br>
-b.shareperference工具类封装，解决多进程使用sp存取数据问题
+b.shareperference工具类封装，解决多进程使用sp存取数据问题<br>
 
