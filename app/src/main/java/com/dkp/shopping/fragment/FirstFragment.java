@@ -1,6 +1,5 @@
 package com.dkp.shopping.fragment;
 
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -8,12 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.dkp.shopping.R;
+import com.elvishew.xlog.XLog;
 
 /**
  * Created by dkp on 2018/12/3.
  */
 
 public class FirstFragment extends BaseFragment {
+    private static final String TAG = "FirstFragment";
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,12 +29,13 @@ public class FirstFragment extends BaseFragment {
 
     @Override
     void initData() {
+        XLog.d(TAG,"initdata");
 
     }
 
     @Override
     void initView() {
-
+        XLog.d(TAG,"initView");
     }
 
     @Override

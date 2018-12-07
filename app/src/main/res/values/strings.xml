@@ -2,6 +2,9 @@
     <string name="app_name">Shopping</string>
     <string name="sliding_menu">SlidingMenu侧滑菜单</string>
     <string name="viewpager_table">带标题的页面切换</string>
+    <string name="create_log_files">创建登录日志文件</string>
+    <string name="to_log_activity">日志相关页面</string>
+    <string name="crash_test">记录崩溃日志测试</string>
 
     <string name="tab_first_name">Class</string>
     <string name="tab_second_name">Message</string>

@@ -2,7 +2,12 @@ package com.dkp.shopping.utils;
 
 import android.app.ActivityManager;
 import android.content.Context;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.widget.TextView;
+
+import com.dkp.shopping.MyApplication;
 
 import java.lang.reflect.Field;
 import java.util.List;
@@ -82,5 +87,59 @@ public class CommonUtils {
         }
         return  false;
 
+    }
+
+    public static boolean IsDebugVersion = isDebugVersion(MyApplication.getContext());
+    private static boolean isDebugVersion(Context context) {
+        try {
+            ApplicationInfo info = context.getApplicationInfo();
+            return (info.flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    /**
+     * 获取版本名称
+     *
+     * @param context
+     * @return
+     */
+    public static String getVersionName(Context context) {
+        return getVersionName(context, context.getPackageName());
+    }
+
+    /**
+     * 获取指定包名应用的版本名称
+     *
+     * @param context
+     * @return
+     */
+    public static String getVersionName(Context context, String packageName) {
+        String versionName = "1.0.0";
+        try {
+            versionName = context.getPackageManager().getPackageInfo(packageName, 0).versionName;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return versionName;
+    }
+
+    /**
+     * 获取客户端版本号
+     *
+     * @return
+     */
+    public static int getVersionCode(Context context) {
+        try {
+            PackageManager manager = context.getPackageManager();
+            PackageInfo info;
+            info = manager.getPackageInfo(context.getPackageName(), 0);
+            return info.versionCode;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return 20150422;
     }
 }

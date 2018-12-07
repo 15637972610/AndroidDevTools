@@ -3,7 +3,6 @@ package com.dkp.shopping.ui;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 
 import com.dkp.shopping.R;
 import com.dkp.shopping.adapter.FgPagerAdapter;
@@ -13,6 +12,7 @@ import com.dkp.shopping.fragment.ThirdFragment;
 import com.dkp.shopping.viewpager.ActionBarMainView;
 import com.dkp.shopping.viewpager.NoScrollViewPager;
 import com.dkp.shopping.viewpager.TabViewPager;
+import com.elvishew.xlog.XLog;
 
 import java.util.ArrayList;
 
@@ -116,7 +116,7 @@ public class ViewPageTableActivity extends BaseActivity implements ViewPager.OnP
     @Override
 //    @BehaviorTrace("滑动统计")
     public void onPageSelected(int position) {
-        Log.e(TAG," position="+position);
+        XLog.d(TAG," position="+position);
         tabView.setSelector(position);
         //控制按需加载的第三页，目前三页全部加载不需要这个
 //        if (mFgPagerAdapter != null) {
@@ -147,19 +147,19 @@ public class ViewPageTableActivity extends BaseActivity implements ViewPager.OnP
 
     @Override
     protected void onResume() {
-        Log.d("TAG","onResume");
+        XLog.d(TAG,"onResume");
         super.onResume();
     }
 
     @Override
     protected void onPause() {
-        Log.d("TAG","onPause");
+        XLog.d(TAG,"onPause");
         super.onPause();
     }
 
     @Override
     protected void onStop() {
-        Log.d("TAG","onStop");
+        XLog.d(TAG,"onStop");
         super.onStop();
     }
 

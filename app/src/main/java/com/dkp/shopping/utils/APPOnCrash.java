@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.os.Environment;
+import android.util.Log;
 
 import java.io.File;
 import java.io.PrintWriter;
@@ -17,20 +18,21 @@ import java.util.Date;
  */
 
 public class APPOnCrash implements CrashHandler.OnCrash {
-    public static final String LOG_FILE_DIR = "rouchi/log/crash";
-    Context context;
+    public static final String LOG_FILE_DIR = "dkpdemo/log/crash";
+    private static final String TAG = "APPOnCrash";
+    Context mContext;
     public APPOnCrash(Context cont) {
-        this.context = cont;
+        this.mContext = cont;
     }
 
     @Override
     public void onPreTerminate(Thread thread, Throwable ex) {
-//        XLog.d(" Crashed : " + Log.getStackTraceString(ex));
+      Log.d(TAG," Crashed : " + Log.getStackTraceString(ex));
         StringWriter sw = new StringWriter();
         PrintWriter writer = new PrintWriter(sw);
         Date date = new Date();
 
-        String packageName = context.getPackageName();
+        String packageName = mContext.getPackageName();
 
         try {
             writer.println("Date:" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date));
@@ -38,7 +40,7 @@ public class APPOnCrash implements CrashHandler.OnCrash {
 
             writer.println("AppPkgName:" + packageName);
             try {
-                PackageInfo packageInfo = context.getPackageManager().getPackageInfo(packageName, 0);
+                PackageInfo packageInfo = mContext.getPackageManager().getPackageInfo(packageName, 0);
                 writer.println("VersionCode:" + packageInfo.versionCode);
                 writer.println("VersionName:" + packageInfo.versionName);
                 writer.println("Debug:" + (0 != (packageInfo.applicationInfo.flags & ApplicationInfo.FLAG_DEBUGGABLE)));
@@ -48,7 +50,7 @@ public class APPOnCrash implements CrashHandler.OnCrash {
                 writer.println("Debug:Unkown");
             }
 
-            writer.println("PName:" + CommonUtils.getProcessName(context));
+            writer.println("PName:" + CommonUtils.getProcessName(mContext));
             writer.println("\n");
 
             writer.println("----------------------------------------System Infomation-----------------------------------");
@@ -75,8 +77,8 @@ public class APPOnCrash implements CrashHandler.OnCrash {
             writer.println("------Exception StackTrace:");
             ex.printStackTrace(writer);
 
-            if (FileUtils.isSdcardReady()) {
-                File file = new File(Environment.getExternalStoragePublicDirectory(LOG_FILE_DIR),
+            if (FileUtil.isSdcardReady()) {
+                File file = new File(Environment.getExternalStoragePublicDirectory("dkpdemo/crash"),
                         "crash-app-" + new SimpleDateFormat("yyyy-MM-dd").format(date) + ".log");
                 if (!file.getParentFile().exists()) {
                     file.getParentFile().mkdirs();
@@ -89,10 +91,10 @@ public class APPOnCrash implements CrashHandler.OnCrash {
                 if (file.exists()) {
                     file.delete();
                 }
-                FileUtils.writeStringToFileImpl(file, sw.toString(), false);
+                FileUtil.writeStringToFileImpl(file, sw.toString(), false);
             }
         } catch (Throwable e) {
-//            XLog.e(" uncaughtException : " + Log.getStackTraceString(e));
+            Log.e(TAG," uncaughtException : " + Log.getStackTraceString(e));
         } finally {
             try {
                 if (writer != null) {
@@ -116,7 +118,7 @@ public class APPOnCrash implements CrashHandler.OnCrash {
     public void onTerminate(Thread thread, Throwable ex) {
         // 关闭当前应用
 //        finishAllActivity();
-//        XLog.e(" kill current process : " + android.os.Process.myPid());
+        Log.e(TAG," kill current process : " + android.os.Process.myPid());
         android.os.Process.killProcess(android.os.Process.myPid());
 
     }

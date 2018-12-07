@@ -9,29 +9,20 @@
     android:padding="20dp">
 
     <Button
-        android:id="@+id/sliding_btn"
+        android:id="@+id/crash_btn"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:background="#87CEFF"
-        android:text="@string/sliding_menu" />
-
+        android:text="@string/crash_test" />
     <Button
-        android:id="@+id/viewpager_btn"
+        android:id="@+id/createLogFile_btn"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:background="#87CEFF"
-        android:text="@string/viewpager_table"
-        app:layout_constraintTop_toBottomOf="@+id/sliding_btn" />
-    <Button
-        android:id="@+id/to_LogActivity_btn"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:background="#87CEFF"
-        android:text="@string/to_log_activity"
-        app:layout_constraintTop_toBottomOf="@+id/viewpager_btn" />
+        android:text="@string/create_log_files"
+        app:layout_constraintTop_toBottomOf="@+id/crash_btn" />
 
 
 </android.support.constraint.ConstraintLayout>

@@ -10,7 +10,7 @@ import java.text.Normalizer;
 import java.util.Random;
 
 /**
- * Created by Administrator on 2018/7/12.
+ * Created by DKP on 2018/7/12.
  */
 
 public class StringUtil {

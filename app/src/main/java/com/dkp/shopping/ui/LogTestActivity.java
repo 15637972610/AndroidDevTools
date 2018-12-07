@@ -8,31 +8,28 @@ import android.view.View;
 import android.widget.Button;
 
 import com.dkp.shopping.R;
+import com.dkp.shopping.utils.XLogUtils;
 import com.elvishew.xlog.Logger;
 import com.elvishew.xlog.XLog;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "MainActivity";
+public class LogTestActivity extends AppCompatActivity {
+    private static final String TAG = "LogTestActivity";
+
     /**
-     * 切换去侧滑菜单的按钮
+     * 崩溃日志收集测试按钮
      */
-    @BindView(R.id.sliding_btn)
-    Button mSlingBtn;
+    @BindView(R.id.crash_btn)
+    Button mCrashBtn;
 
     /**
      * 切换去table页的按钮
      */
-    @BindView(R.id.viewpager_btn)
-    Button mViewpagerBtn;
-
-    /**
-     * 切换去table页的按钮
-     */
-    @BindView(R.id.to_LogActivity_btn)
-    Button mToLogActivity_btn;
+    @BindView(R.id.createLogFile_btn)
+    Button mCreateLogFileBtn;
 
     Logger mLog;
 
@@ -40,28 +37,28 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         XLog.d("onCreate");
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_log_test);
         ButterKnife.bind(this);
+        /**
+         * 将登录相关日志存储到登录日志文件中
+         */
+        mLog = XLogUtils.createLoggerWithTag(TAG);
     }
 
     int i = 0;
 
-    @OnClick({R.id.sliding_btn, R.id.viewpager_btn, R.id.to_LogActivity_btn})
+    @OnClick({R.id.crash_btn, R.id.createLogFile_btn})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.sliding_btn:
-                Intent sliding_menu = new Intent(MainActivity.this, SlidingMenuActivity.class);
-                startActivity(sliding_menu);
+            case R.id.crash_btn:
+                //手动捕获崩溃日志测试代码，空指针
+                String empty = null;
+                int n = empty.length();
                 break;
-            case R.id.viewpager_btn:
-                Intent viewpagertable = new Intent(MainActivity.this, ViewPageTableActivity.class);
-                startActivity(viewpagertable);
+            case R.id.createLogFile_btn:
+                mLog.d("i=" + i);
+                i++;
                 break;
-
-            case R.id.to_LogActivity_btn:
-                Intent logIntent = new Intent(MainActivity.this,LogTestActivity.class);
-                startActivity(logIntent);
-
             default:
                 break;
         }
