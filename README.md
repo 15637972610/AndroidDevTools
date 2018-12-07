@@ -14,5 +14,6 @@ TODO:<br>
 a.日志分模块上传，例如登录日志，崩溃日志等根据不同场景上传<br>
 b.shareperference工具类封装，解决多进程使用sp存取数据问题<br>
 c.okhttp使用工具类封装<br>
-d.retrofit + okgo +rxjava工具类封装
+d.retrofit + okgo +rxjava工具类封装<br>
+e.检查更新<br>
 
