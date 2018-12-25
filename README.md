@@ -11,7 +11,7 @@ contains these moudles at now!<br>
 8.shareperference工具类封装，解决多进程使用sp存取数据丢失问题<br>
 
 TODO:<br>
-a.日志分模块上传，例如登录日志，崩溃日志等根据不同场景上传<br>
+a.日志分模块上传，例如登录日志，崩溃日志等根据不同场景上传到不同位置<br>
 b.okhttp使用工具类封装<br>
 c.retrofit + okgo +rxjava工具类封装<br>
 d.检查更新<br>
