@@ -34,13 +34,12 @@
             android:name="com.dkp.shopping.service.UploadLogService"
             >
         </service>
-
         <provider
             android:name="com.dkp.shopping.preferenceHelper.PreferenceProvider"
-            android:authorities="com.dkp.shopping.preferenceHelper.helper"
-            android:multiprocess="false"/>
-
-
+            android:authorities="com.dkp.shopping.preferenceHelper.PreferenceProvider"
+            android:multiprocess="false"
+            />
     </application>
+
 
 </manifest>

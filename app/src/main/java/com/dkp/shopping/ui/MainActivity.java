@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.dkp.shopping.R;
+import com.dkp.shopping.utils.SharePreferenceUtils;
+import com.dkp.shopping.utils.ToastUitl;
 import com.elvishew.xlog.Logger;
 import com.elvishew.xlog.XLog;
 import butterknife.BindView;
@@ -32,6 +34,12 @@ public class MainActivity extends AppCompatActivity {
      * 切换去table页的按钮
      */
     @BindView(R.id.to_LogActivity_btn)
+    Button mToSPpage_btn;
+
+    /**
+     * 切换去table页的按钮
+     */
+    @BindView(R.id.to_sppage_btn)
     Button mToLogActivity_btn;
 
     Logger mLog;
@@ -42,11 +50,12 @@ public class MainActivity extends AppCompatActivity {
         XLog.d("onCreate");
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        SharePreferenceUtils.setDBParam(MainActivity.this,"sptest","数据存储测试成功");
     }
 
     int i = 0;
 
-    @OnClick({R.id.sliding_btn, R.id.viewpager_btn, R.id.to_LogActivity_btn})
+    @OnClick({R.id.sliding_btn, R.id.viewpager_btn, R.id.to_LogActivity_btn,R.id.to_sppage_btn})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.sliding_btn:
@@ -61,6 +70,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.to_LogActivity_btn:
                 Intent logIntent = new Intent(MainActivity.this,LogTestActivity.class);
                 startActivity(logIntent);
+            case R.id.to_sppage_btn:
+                String ss = (String) SharePreferenceUtils.getDBParam(MainActivity.this,"sptest","测试失败");
+                ToastUitl.show(ss);
 
             default:
                 break;

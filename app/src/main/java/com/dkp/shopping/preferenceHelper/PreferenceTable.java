@@ -20,7 +20,7 @@ public class PreferenceTable {
     public static final int ITEM = 1;
     public static final int ITEM_ID = 2;
 
-    public static final String AUTHORITY = "com.dkp.shopping.preferencehelper";
+    public static final String AUTHORITY = "com.dkp.shopping.preferenceHelper.PreferenceProvider";
 
     public static final String CONTENT_TYPE = "vnd.android.cursor.dir/vnd.preference.provider";
     public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/vnd.preference.provider";
