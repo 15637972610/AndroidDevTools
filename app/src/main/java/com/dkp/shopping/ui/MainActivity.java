@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.to_LogActivity_btn:
                 Intent logIntent = new Intent(MainActivity.this,LogTestActivity.class);
                 startActivity(logIntent);
+                break;
             case R.id.to_sppage_btn:
                 String ss = (String) SharePreferenceUtils.getDBParam(MainActivity.this,"sptest","测试失败");
                 ToastUitl.show(ss);
